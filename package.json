@@ -1,9 +1,23 @@
 {
   "name": "loopback-component-mongodb-mt-automigrate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auto migrate with mongodb-mt connector",
+  "engines": {
+    "node": ">=4"
+  },
   "main": "index.js",
-  "repository": "https://github.com/FernandoFranco/loopback-component-mongodb-mt-automigrate.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FernandoFranco/loopback-component-mongodb-mt-automigrate.git"
+  },
+  "keywords": [
+    "component",
+    "datasource",
+    "loopback",
+    "strongloop",
+    "mongodb-mt",
+    "multitenant"
+  ],
   "author": "Fernando Franco <atr.franco@gmail.com>",
   "license": "MIT"
 }
