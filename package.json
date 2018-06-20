@@ -1,0 +1,9 @@
+{
+  "name": "loopback-component-mongodb-mt-automigrate",
+  "version": "1.0.0",
+  "description": "Auto migrate with mongodb-mt connector",
+  "main": "index.js",
+  "repository": "https://github.com/FernandoFranco/loopback-component-mongodb-mt-automigrate.git",
+  "author": "Fernando Franco <atr.franco@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Automigrate",
+  "base": "PersistedModel",
+  "strict": "filter",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tenant": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "version": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
