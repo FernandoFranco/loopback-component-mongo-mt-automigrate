@@ -1,11 +1,11 @@
-# loopback-component-mongo-mt-automigrate
+# loopback-component-mongodb-mt-automigrate
 Auto migrate with mongodb-mt connector
 
 ## Instalation
 Rum the command  
-`npm install loopback-component-mongo-mt-automigrate`
+`npm install loopback-component-mongodb-mt-automigrate`
 or
-´yarn add loopback-component-mongo-mt-automigrate´
+´yarn add loopback-component-mongodb-mt-automigrate´
 
 ## Component configurations
 Required configurations to using this component
@@ -29,7 +29,7 @@ Add Models in `./server/model-config.json`
 {
   "_meta": {
     "sources": [
-      "../nodemodules/loopback-component-mongo-mt-automigrat/models"
+      "../nodemodules/loopback-component-mongodb-mt-automigrat/models"
     ]
   },
   "Automigrate": {
@@ -39,7 +39,7 @@ Add Models in `./server/model-config.json`
 }
 ```
 ### component-config.json
-Add `loopback-component-mongo-mt-automigrate` in `./server/component-config.json`
+Add `loopback-component-mongodb-mt-automigrate` in `./server/component-config.json`
 ```json
 {
   "./component/automigration": {
