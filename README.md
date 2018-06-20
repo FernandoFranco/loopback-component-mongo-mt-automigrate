@@ -29,7 +29,7 @@ Add Models in `./server/model-config.json`
 {
   "_meta": {
     "sources": [
-      "../nodemodules/loopback-component-mongodb-mt-automigrat/models"
+      "../node_modules/loopback-component-mongodb-mt-automigrate/src/models"
     ]
   },
   "Automigrate": {
