@@ -1,6 +1,6 @@
 {
   "name": "loopback-component-mongodb-mt-automigrate",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Auto migrate with mongodb-mt connector",
   "engines": {
     "node": ">=4"

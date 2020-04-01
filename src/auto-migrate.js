@@ -42,12 +42,6 @@ function migrateTenant(config) {
 }
 
 function startAutoMigrationComponent(app, config) {
-  // Migrate: Default
-  migrateTenant(Object.assign(config, {
-    models: [config.Automigrate],
-    accessToken: { tenant: '' },
-  }));
-
   // Migrate: A la carte
   app.middleware('routes:before', (req, _, next) => {
     if (req.accessToken && req.accessToken.tenant) {
@@ -55,6 +49,12 @@ function startAutoMigrationComponent(app, config) {
     }
     next();
   });
+
+  // Migrate: Default
+  migrateTenant(Object.assign({}, config, {
+    models: [config.Automigrate],
+    accessToken: { tenant: '' },
+  }));
 }
 
 module.exports = function autoMigrateComponent(app, { method, dataSource, models }) {
