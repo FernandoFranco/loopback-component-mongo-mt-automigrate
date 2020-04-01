@@ -3,6 +3,13 @@
   "base": "PersistedModel",
   "strict": "filter",
   "idInjection": true,
+  "indexes": {
+    "idx_tenant": {
+      "keys": { "tenant": 1 },
+      "options": { "background": true }
+    }
+  },
+  "version": 1,
   "options": {
     "validateUpsert": true
   },

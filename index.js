@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./src/automigrate');
+module.exports = require('./src/auto-migrate');
