@@ -1,4 +1,6 @@
-function migrateModel(config, Model, migrated) {
+'use strict';
+
+function migrateModel(config, Model) {
   return new Promise((resolve, reject) => {
     config.dataSource.connector[config.method](Model.name, {
       accessToken: config.accessToken,
@@ -7,16 +9,21 @@ function migrateModel(config, Model, migrated) {
       else resolve();
     });
   })
-    .then(() => {
-      const migration = {
+    .then(() => new Promise((resolve, reject) => {
+      config.Automigrate.updateOrCreate({
+        id: `${config.accessToken.tenant}:${Model.name.toLowerCase()}`,
         tenant: config.accessToken.tenant,
         model: Model.name,
         version: Model.definition.settings.version,
-        date: new Date(),
-      };
-
-      if (migrated) migrated.updateAttributes(migration);
-      else config.Automigrate.create(migration);
+      }, {
+        skipPropertyFilter: true
+      }, (err) => {
+        if (err) reject(err);
+        else resolve();
+      });
+    }))
+    .catch((err) => {
+      console.error('AutoMigrate', err.message);
     });
 }
 
@@ -35,9 +42,12 @@ function migrateTenant(config) {
       config.models.forEach((Model) => {
         const migrated = migrateds.find((m) => m.model === Model.name);
         if (!migrated || migrated.version < Model.definition.settings.version) {
-          migrateModel(config, Model, migrated);
+          migrateModel(config, Model);
         }
       });
+    })
+    .catch((err) => {
+      console.error('AutoMigrate', err.message);
     });
 }
 

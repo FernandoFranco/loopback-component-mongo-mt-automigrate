@@ -2,7 +2,7 @@
 Auto migrate with mongodb-mt connector
 
 ## Instalation
-Rum the command  
+Rum the command
 `npm install loopback-component-mongodb-mt-automigrate`
 or
 ´yarn add loopback-component-mongodb-mt-automigrate´
@@ -45,6 +45,7 @@ Add `loopback-component-mongodb-mt-automigrate` in `./server/component-config.js
   "./component/automigration": {
     "method": "autoupdate",
     "dataSource": "db",
+    "clustered": true,
     "models": [
       "MyModel",
     ]

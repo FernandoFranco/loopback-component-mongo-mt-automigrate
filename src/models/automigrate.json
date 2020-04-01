@@ -9,11 +9,15 @@
       "options": { "background": true }
     }
   },
-  "version": 1,
+  "version": 2,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "tenant": {
       "type": "string"
     },
@@ -23,7 +27,7 @@
     "version": {
       "type": "number"
     },
-    "date": {
+    "updated": {
       "type": "date"
     }
   },
